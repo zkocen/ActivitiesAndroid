@@ -92,6 +92,9 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
+		mCreate++;
+		displayCounts();
+		
 
 	}
 

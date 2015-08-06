@@ -1,6 +1,7 @@
 package course.labs.activitylab;
 
 import android.app.Activity;
+import android.graphics.YuvImage;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +55,10 @@ public class ActivityTwo extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
+		mTvCreate = (TextView)findViewById(R.id.create);
+		mTvStart = (TextView)findViewById(R.id.start);
+		mTvRestart = (TextView)findViewById(R.id.restart);
+		mTvResume = (TextView)findViewById(R.id.resume);
 
 
 		
@@ -69,7 +74,7 @@ public class ActivityTwo extends Activity {
 				// TODO:
 				// This function closes Activity Two
 				// Hint: use Context's finish() method
-
+				finish();
 				
 			
 			}
@@ -95,7 +100,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
+		mCreate++;
+		displayCounts();
 
 		
 		
@@ -196,12 +202,9 @@ public class ActivityTwo extends Activity {
 	public void displayCounts() {
 
 		// TODO - uncomment these lines
-	/*
 		mTvCreate.setText("onCreate() calls: " + mCreate);
 		mTvStart.setText("onStart() calls: " + mStart);
 		mTvResume.setText("onResume() calls: " + mResume);
 		mTvRestart.setText("onRestart() calls: " + mRestart);
-	*/
-	
 	}
 }
