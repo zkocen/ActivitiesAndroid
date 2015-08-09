@@ -59,11 +59,6 @@ public class ActivityTwo extends Activity {
 		mTvStart = (TextView)findViewById(R.id.start);
 		mTvRestart = (TextView)findViewById(R.id.restart);
 		mTvResume = (TextView)findViewById(R.id.resume);
-
-
-		
-		
-		
 		
 		Button closeButton = (Button) findViewById(R.id.bClose); 
 		closeButton.setOnClickListener(new OnClickListener() {
@@ -75,23 +70,18 @@ public class ActivityTwo extends Activity {
 				// This function closes Activity Two
 				// Hint: use Context's finish() method
 				finish();
-				
 			
 			}
 		});
+		
+	//	Button goBackToActivityOne = (Button) findViewById(R.id.)
 
 		// Has previous state been saved?
 		if (savedInstanceState != null) {
-
-			// TODO:
-			// Restore value of counters from saved state
-			// Only need 4 lines of code, one for every count variable
-
-
-			
-			
-			
-			
+			mCreate = savedInstanceState.getInt(CREATE_KEY);
+			mStart = savedInstanceState.getInt(START_KEY);
+			mResume = savedInstanceState.getInt(RESUME_KEY);
+			mRestart = savedInstanceState.getInt(RESTART_KEY);
 		}
 
 		// Emit LogCat message
@@ -119,10 +109,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-		
-		
+		mStart++;
+		displayCounts();
 	}
 
 	@Override
@@ -131,13 +119,11 @@ public class ActivityTwo extends Activity {
 
 		// Emit LogCat message
 		Log.i(TAG, "Entered the onResume() method");
-
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-	
+		mResume++;
+		displayCounts();
 	}
 
 	@Override
@@ -166,10 +152,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-	
-	
+		mRestart++;
+		displayCounts();
 	}
 
 	@Override
@@ -186,15 +170,14 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Save counter state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
-
-
-
-		
-		
-		
-		
+		if (savedInstanceState != null) {
+			savedInstanceState.putInt(CREATE_KEY, mCreate);
+			savedInstanceState.putInt(RESTART_KEY, mRestart);
+			savedInstanceState.putInt(RESUME_KEY, mResume);
+			savedInstanceState.putInt(START_KEY, mStart);
+		}
 	}
-
+	
 	// Updates the displayed counters
 	// This method expects that the counters and TextView variables use the
 	// names

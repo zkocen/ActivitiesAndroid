@@ -82,8 +82,10 @@ public class ActivityOne extends Activity {
 			// TODO:
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
-			
-
+			mCreate = savedInstanceState.getInt(CREATE_KEY);
+			mRestart = savedInstanceState.getInt(RESTART_KEY);
+			mResume = savedInstanceState.getInt(RESUME_KEY);
+			mStart = savedInstanceState.getInt(START_KEY);
 		}
 
 		// Emit LogCat message
